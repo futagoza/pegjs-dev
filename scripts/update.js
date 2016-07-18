@@ -28,10 +28,16 @@ exec(
     const count = stdout ? stdout.toString('utf-8') : ''
     if ( count !== '' ) {
       writeFileSync(pegREADME, readFileSync(devREADME, 'utf-8'))
+      console.log(`Replaced ${ pegREADME }`)
+
       let metaData = Object.assign(require(pegPackage), require(devPackage))
       metaData.version += `-${ count }`
       writeFileSync(pegPackage, JSON.stringify(metaData, null, '  ') + '\n')
+      console.log(`Updated ${ pegPackage }`)
+
       writeFileSync(pegVERSION, metaData.version + '\n')
+      console.log(`Updated ${ pegVERSION }`)
+
       process.exit(0)
     }
   }
