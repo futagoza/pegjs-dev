@@ -1,0 +1,12 @@
+{
+  "private": true,
+
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+
+  "dependencies": {
+    "rimraf": "2.5.3"
+  }
+
+}
