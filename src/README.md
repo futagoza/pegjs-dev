@@ -27,6 +27,8 @@ version string: '0.9.0-66' means 66 commits.
   * More then 5 commits have occurred
   * I'm currently using PEG.js via [pegjs-dev](https://www.npmjs.com/package/pegjs-dev)
 
+3) Before 18 July 2016, whenever I updated this module, the version was changed to '0.9.(...)', but now its '0.9.0-(...)'
+
 More information...
 -------------------
 PEG.js is developed by [David Majda](http://majda.cz/)
