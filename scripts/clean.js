@@ -2,8 +2,9 @@
 
 const rimraf = require('rimraf')
 const { lstat } = require('fs')
+const { target } = require('../package.json')
 
-lstat('lib', err => {
+lstat(target, err => {
   if ( err ) {
     if ( err.code != 'ENOENT' ) {
       console.error(err.stack)
@@ -11,11 +12,11 @@ lstat('lib', err => {
     }
     process.exit(0)
   }
-  rimraf('lib', function(err){
+  rimraf(target, function(err){
     if ( err ) {
       console.error(err.stack || err.message || err)
       process.exit(1)
     }
-    console.log('Removed "lib"')
+    console.log(`Removed "${ target }"`)
   })
 })
