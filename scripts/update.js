@@ -1,15 +1,15 @@
 'use strict'
 
 const { exec } = require('child_process')
-const { pegjs, target } = require('../package.json')
+const { target } = require('../package.json')
 const { readFileSync, writeFileSync } = require('fs')
 const { join } = require('path')
 
 const cwd = join(__dirname, '..')
-const pegREADME = join(cwd, 'lib', 'README.md')
+const pegREADME = join(cwd, target, 'README.md')
 const devREADME = join(cwd, 'src', 'README.md')
 
-const pegPackage = join(cwd, 'lib', 'package.json')
+const pegPackage = join(cwd, target, 'package.json')
 const devPackage = join(cwd, 'src', 'package.json')
 
 exec(
