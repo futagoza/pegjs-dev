@@ -8,7 +8,6 @@ const { join } = require('path')
 const cwd = join(__dirname, '..')
 const pegREADME = join(cwd, 'lib', 'README.md')
 const devREADME = join(cwd, 'src', 'README.md')
-const pegVERSION = join(cwd, 'lib', 'VERSION')
 
 const pegPackage = join(cwd, 'lib', 'package.json')
 const devPackage = join(cwd, 'src', 'package.json')
@@ -34,9 +33,6 @@ exec(
       metaData.version += `-${ count }`
       writeFileSync(pegPackage, JSON.stringify(metaData, null, '  ') + '\n')
       console.log(`Updated ${ pegPackage }`)
-
-      writeFileSync(pegVERSION, metaData.version + '\n')
-      console.log(`Updated ${ pegVERSION }`)
 
       process.exit(0)
     }
