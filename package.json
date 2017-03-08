@@ -1,20 +1,35 @@
 {
+
   "private": true,
 
-  "engines": {
-    "node": ">= 6.0.0"
-  },
-
   "dependencies": {
-    "rimraf": "2.5.4"
+
+    "rimraf": "2.6.1"
+
   },
 
-  "target": "lib",
+  "engines": {
+
+    "node": ">= 7.7.1"
+
+  },
 
   "pegjs": {
+
     "repository": "https://github.com/pegjs/pegjs.git",
-    "releaseTag": "v0.10.0",
-    "branch": "master"
+    "branch": "master",
+    "releaseTag": "v0.10.0"
+
+  },
+
+  "scripts": {
+
+    "clone": "node scripts/clone",
+    "count": "node scripts/count",
+    "update": "node scripts/update",
+    "publish": "node scripts/publish",
+    "clean": "node scripts/clean"
+
   }
 
 }
