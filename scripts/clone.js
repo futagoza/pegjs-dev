@@ -1,19 +1,20 @@
 'use strict'
 
-const { spawn } = require('child_process')
-const { pegjs, target } = require('../package.json')
+const { spawn } = require( 'child_process' )
+const { pegjs } = require( '../package.json' )
+const { join } = require( 'path' )
 
-spawn('git', ['clone', pegjs.repository, target], {
-  cwd: require('path').join(__dirname, '..'),
+spawn( 'git', [ 'clone', pegjs.repository, 'lib' ], {
+
+  cwd: join( __dirname, '..' ),
   env: process.env,
   stdio: 'inherit'
-})
-.on('error', err => {
-  if ( err.stderr ) {
-    // It shouldn't, but it seems to print error even without this
-    // console.error('\n' + err.stderr.toString('utf-8'))
-  } else {
-    console.error(err.stack || err.message || err)
-  }
-  process.exit(1)
-})
+
+} )
+
+.on( 'error', function complete( err ) {
+
+  console.error( err.stack || err.message || err )
+  process.exit( 1 )
+
+} )

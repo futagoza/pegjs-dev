@@ -1,19 +1,23 @@
 'use strict'
 
-const { exec } = require('child_process')
-const { target } = require('../package.json')
+const { exec } = require( 'child_process' )
+const { join } = require( 'path' )
 
 exec(
-  `npm publish`, { cwd: require('path').join(__dirname, '..', target) },
-  ( err, stdout, stderr ) => {
+
+  `npm publish`, { cwd: join( __dirname, '..', 'lib' ) },
+
+  function printResult( err, stdout ) {
+
     if ( err ) {
-      if ( stderr || err.stderr ) {
-        console.error('\n' + (stderr || err.stderr).toString('utf-8'))
-      } else {
-        console.error(err.stack || err.message || err)
-      }
-      process.exit(1)
+
+      console.error( err.stack || err.message || err )
+      process.exit( 1 )
+
     }
-    if ( stdout ) process.stdout.write(stdout)
+
+    if ( stdout ) process.stdout.write( stdout )
+
   }
+
 )
