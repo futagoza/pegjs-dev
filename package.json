@@ -1,37 +1,37 @@
 {
 
-  "private": true,
+    "private": true,
 
-  "dependencies": {
-    "eslint": "3.19.0",
-    "eslint-config-futagozaryuu": "2.0.0",
-    "rimraf": "2.6.1"
+    "dependencies": {
+        "eslint": "3.19.0",
+        "eslint-config-futagozaryuu": "2.0.0",
+        "rimraf": "2.6.1"
 
-  },
+    },
 
-  "engines": {
+    "engines": {
 
-    "node": ">= 6.0.0"
+        "node": ">= 6.0.0"
 
-  },
+    },
 
-  "pegjs": {
+    "pegjs": {
 
-    "repository": "https://github.com/pegjs/pegjs.git",
-    "branch": "master",
-    "releaseTag": "v0.10.0"
+        "repository": "https://github.com/pegjs/pegjs.git",
+        "branch": "master",
+        "releaseTag": "v0.10.0"
 
-  },
+    },
 
-  "scripts": {
+    "scripts": {
 
-    "test": "eslint --cache scripts",
-    "clone": "node scripts/clone",
-    "count": "node scripts/count",
-    "update": "node scripts/update",
-    "publish": "node scripts/publish",
-    "clean": "node scripts/clean"
+        "test": "eslint --cache scripts",
+        "clone": "node scripts/clone",
+        "count": "node scripts/count",
+        "update": "node scripts/update",
+        "publish": "node scripts/publish",
+        "clean": "node scripts/clean"
 
-  }
+    }
 
 }
