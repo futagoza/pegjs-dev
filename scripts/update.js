@@ -6,6 +6,8 @@ const { join } = require( 'path' )
 const { EOL } = require( 'os' )
 
 const cwd = join( __dirname, '..' )
+const pegBinfile = join( cwd, 'lib', 'bin', 'pegjs' )
+
 const pegREADME = join( cwd, 'lib', 'README.md' )
 const devREADME = join( cwd, 'src', 'README.md' )
 
@@ -31,6 +33,9 @@ exec(
 
       writeFileSync( pegREADME, readFileSync( devREADME, 'utf8' ) )
       console.log( `Replaced ${ pegREADME }` )
+
+      const binfile = readFileSync( pegBinfile, 'utf8' )
+      writeFileSync( pegBinfile, binfile.replace( /\r\n/, '\n' ) )
 
       let metaData = Object.assign( require( pegPackage ), require( devPackage ) )
       metaData.version += `-${ count }`
