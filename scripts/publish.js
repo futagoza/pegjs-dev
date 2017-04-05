@@ -4,16 +4,29 @@ const { exec } = require( "child_process" );
 const { join } = require( "path" );
 
 const cwd = join( __dirname, "..", "pegjs" );
+const pegjs = require( join( cwd, "package.json" ) );
 
-exec( "npm publish", { cwd }, function printResult( err, stdout ) {
+function run( command, callback ) {
 
-    if ( err ) {
+    exec( command, { cwd }, function printResult( err, stdout ) {
 
-        console.error( err.stack || err.message || err );
-        process.exit( 1 );
+        if ( err ) {
 
-    }
+            console.error( err.stack || err.message || err );
+            process.exit( 1 );
 
-    if ( stdout ) process.stdout.write( stdout );
+        }
+
+        callback( Buffer.isBuffer( stdout ) ? stdout.toString( "utf8" ) : stdout );
+
+    } );
+
+}
+
+run( "npm view pegjs-dev version", function publish( stdout ) {
+
+    if ( pegjs.version === stdout.trim() ) return false;
+
+    run( "npm publish", process.stdout.write.bind( process.stdout ) );
 
 } );
