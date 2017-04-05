@@ -1,12 +1,11 @@
 "use strict";
 
 const { exec } = require( "child_process" );
-const { pegjs } = require( "../package.json" );
 const { join } = require( "path" );
 
 exec(
 
-  `git rev-list ${ pegjs.releaseTag }..${ pegjs.branch }`,
+  `git rev-list v0.10.0..master`,
 
   { cwd: join( __dirname, "..", "lib" ) },
 

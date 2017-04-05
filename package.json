@@ -15,14 +15,6 @@
 
     },
 
-    "pegjs": {
-
-        "repository": "https://github.com/pegjs/pegjs.git",
-        "branch": "master",
-        "releaseTag": "v0.10.0"
-
-    },
-
     "scripts": {
 
         "test": "eslint --cache scripts",
