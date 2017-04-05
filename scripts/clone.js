@@ -3,7 +3,7 @@
 const { spawn } = require( "child_process" );
 const { join } = require( "path" );
 
-spawn( "git", [ "clone", "https://github.com/pegjs/pegjs.git", "lib" ], {
+spawn( "git", [ "clone", "https://github.com/pegjs/pegjs.git" ], {
 
     cwd: join( __dirname, ".." ),
     env: process.env,

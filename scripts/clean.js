@@ -3,7 +3,7 @@
 const rimraf = require( "rimraf" );
 const { lstat } = require( "fs" );
 
-lstat( "lib", function remove( err ) {
+lstat( "pegjs", function remove( err ) {
 
     if ( err ) {
 
@@ -18,7 +18,7 @@ lstat( "lib", function remove( err ) {
 
     }
 
-    rimraf( "lib", function complete( err ) {
+    rimraf( "pegjs", function complete( err ) {
 
         if ( err ) {
 
@@ -27,7 +27,7 @@ lstat( "lib", function remove( err ) {
 
         }
 
-        console.log( `Removed "lib"` );
+        console.log( `Removed "pegjs"` );
 
     } );
 

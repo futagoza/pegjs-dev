@@ -5,7 +5,7 @@ const { join } = require( "path" );
 
 exec(
 
-  `npm publish`, { cwd: join( __dirname, "..", "lib" ) },
+  `npm publish`, { cwd: join( __dirname, "..", "pegjs" ) },
 
   function printResult( err, stdout ) {
 

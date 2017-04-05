@@ -6,12 +6,12 @@ const { join } = require( "path" );
 const { EOL } = require( "os" );
 
 const cwd = join( __dirname, ".." );
-const pegBinfile = join( cwd, "lib", "bin", "pegjs" );
+const pegBinfile = join( cwd, "pegjs", "bin", "pegjs" );
 
-const pegREADME = join( cwd, "lib", "README.md" );
+const pegREADME = join( cwd, "pegjs", "README.md" );
 const devREADME = join( cwd, "src", "README.md" );
 
-const pegPackage = join( cwd, "lib", "package.json" );
+const pegPackage = join( cwd, "pegjs", "package.json" );
 const devPackage = join( cwd, "src", "package.json" );
 
 exec(

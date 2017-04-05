@@ -7,7 +7,7 @@ exec(
 
   `git rev-list v0.10.0..master`,
 
-  { cwd: join( __dirname, "..", "lib" ) },
+  { cwd: join( __dirname, "..", "pegjs" ) },
 
   function printResult( err, stdout ) {
 
