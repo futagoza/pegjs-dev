@@ -31,7 +31,8 @@ exec( "node scripts/count", { cwd }, function printResult( err, stdout ) {
         console.log( `Replaced ${ pegREADME }` );
 
         const binfile = readFileSync( pegBinfile, "utf8" );
-        writeFileSync( pegBinfile, binfile.replace( /\r\n/, "\n" ) );
+        writeFileSync( pegBinfile, binfile.replace( /\r\n/g, "\n" ) );
+        console.log( `Updated ${ pegBinfile }` );
 
         const metaData = Object.assign( require( pegPackage ), require( devPackage ) );
         metaData.version += `-${ count }`;
