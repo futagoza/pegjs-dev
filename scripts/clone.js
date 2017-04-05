@@ -11,7 +11,7 @@ spawn( "git", [ "clone", "https://github.com/pegjs/pegjs.git" ], {
 
 } )
 
-.on( "error", function complete( err ) {
+.on( "error", function throwError( err ) {
 
     console.error( err.stack || err.message || err );
     process.exit( 1 );

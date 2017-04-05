@@ -1,7 +1,8 @@
 "use strict";
 
-const rimraf = require( "rimraf" );
 const { lstat } = require( "fs" );
+const { join } = require( "path" );
+const rimraf = require( "rimraf" );
 
 const pegjs = join( __dirname, "..", "pegjs" );
 

@@ -14,36 +14,30 @@ const devREADME = join( cwd, "src", "README.md" );
 const pegPackage = join( cwd, "pegjs", "package.json" );
 const devPackage = join( cwd, "src", "package.json" );
 
-exec(
+exec( "node scripts/count", { cwd }, function printResult( err, stdout ) {
 
-  `node scripts/count`, { cwd },
+    if ( err ) {
 
-  function printResult( err, stdout ) {
+        console.error( err.stack || err.message || err );
+        process.exit( 1 );
 
-      if ( err ) {
+    }
 
-          console.error( err.stack || err.message || err );
-          process.exit( 1 );
+    const count = stdout ? stdout.toString( "utf8" ) : "";
 
-      }
+    if ( count !== "" ) {
 
-      const count = stdout ? stdout.toString( "utf8" ) : "";
+        writeFileSync( pegREADME, readFileSync( devREADME, "utf8" ) );
+        console.log( `Replaced ${ pegREADME }` );
 
-      if ( count !== "" ) {
+        const binfile = readFileSync( pegBinfile, "utf8" );
+        writeFileSync( pegBinfile, binfile.replace( /\r\n/, "\n" ) );
 
-          writeFileSync( pegREADME, readFileSync( devREADME, "utf8" ) );
-          console.log( `Replaced ${ pegREADME }` );
+        const metaData = Object.assign( require( pegPackage ), require( devPackage ) );
+        metaData.version += `-${ count }`;
+        writeFileSync( pegPackage, JSON.stringify( metaData, null, "  " ) + EOL );
+        console.log( `Updated ${ pegPackage }` );
 
-          const binfile = readFileSync( pegBinfile, "utf8" );
-          writeFileSync( pegBinfile, binfile.replace( /\r\n/, "\n" ) );
+    }
 
-          const metaData = Object.assign( require( pegPackage ), require( devPackage ) );
-          metaData.version += `-${ count }`;
-          writeFileSync( pegPackage, JSON.stringify( metaData, null, "  " ) + EOL );
-          console.log( `Updated ${ pegPackage }` );
-
-      }
-
-  }
-
-);
+} );

@@ -3,21 +3,17 @@
 const { exec } = require( "child_process" );
 const { join } = require( "path" );
 
-exec(
+const cwd = join( __dirname, "..", "pegjs" );
 
-  `npm publish`, { cwd: join( __dirname, "..", "pegjs" ) },
+exec( "npm publish", { cwd }, function printResult( err, stdout ) {
 
-  function printResult( err, stdout ) {
+    if ( err ) {
 
-      if ( err ) {
+        console.error( err.stack || err.message || err );
+        process.exit( 1 );
 
-          console.error( err.stack || err.message || err );
-          process.exit( 1 );
+    }
 
-      }
+    if ( stdout ) process.stdout.write( stdout );
 
-      if ( stdout ) process.stdout.write( stdout );
-
-  }
-
-);
+} );
