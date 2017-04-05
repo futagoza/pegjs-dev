@@ -1,4 +1,4 @@
 {
-    "extends": "futagozaryuu/node-v7",
+    "extends": "futagozaryuu/node-v6",
     "root": true
 }
