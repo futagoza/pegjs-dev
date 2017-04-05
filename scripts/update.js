@@ -35,7 +35,7 @@ exec( "node scripts/count", { cwd }, function printResult( err, stdout ) {
         console.log( `Updated ${ pegBinfile }` );
 
         const metaData = Object.assign( require( pegPackage ), require( devPackage ) );
-        metaData.version += `-${ count }`;
+        metaData.version = `${ metaData.version.split( "-" )[ 0 ] }-${ count }`;
         writeFileSync( pegPackage, JSON.stringify( metaData, null, "  " ) + EOL );
         console.log( `Updated ${ pegPackage }` );
 
