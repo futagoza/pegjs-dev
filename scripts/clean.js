@@ -3,7 +3,9 @@
 const rimraf = require( "rimraf" );
 const { lstat } = require( "fs" );
 
-lstat( "pegjs", function remove( err ) {
+const pegjs = join( __dirname, "..", "pegjs" );
+
+lstat( pegjs, function remove( err ) {
 
     if ( err ) {
 
@@ -18,7 +20,7 @@ lstat( "pegjs", function remove( err ) {
 
     }
 
-    rimraf( "pegjs", function complete( err ) {
+    rimraf( pegjs, function complete( err ) {
 
         if ( err ) {
 
@@ -27,7 +29,7 @@ lstat( "pegjs", function remove( err ) {
 
         }
 
-        console.log( `Removed "pegjs"` );
+        console.log( `Removed "${ pegjs }"` );
 
     } );
 
