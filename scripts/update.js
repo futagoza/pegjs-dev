@@ -6,7 +6,7 @@ const { join } = require( "path" );
 const { EOL } = require( "os" );
 
 const cwd = join( __dirname, ".." );
-const pegBinfile = join( cwd, "pegjs", "bin", "pegjs" );
+const pegBinfile = join( cwd, "pegjs", "bin", "peg" );
 
 const pegREADME = join( cwd, "pegjs", "README.md" );
 const devREADME = join( cwd, "src", "README.md" );
