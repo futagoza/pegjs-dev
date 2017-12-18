@@ -9,9 +9,7 @@ spawn( "git", [ "clone", "https://github.com/pegjs/pegjs.git" ], {
     env: process.env,
     stdio: "inherit"
 
-} )
-
-.on( "error", function throwError( err ) {
+} ).on( "error", function throwError( err ) {
 
     console.error( err.stack || err.message || err );
     process.exit( 1 );
