@@ -1,0 +1,28 @@
+{
+    "name": "pegjs-dev",
+    "version": "0.11.0-dev",
+    "description": "Parser generator for JavaScript",
+    "keywords": [
+        "parser generator",
+        "PEG"
+    ],
+    "homepage": "https://pegjs.org/",
+    "bugs": "https://github.com/pegjs/pegjs/issues",
+    "license": "MIT",
+    "contributors": [
+        "David Majda <david@majda.cz> (https://majda.cz/)",
+        "Futago-za Ryuu <futagoza.ryuu@gmail.com>"
+    ],
+    "main": "index.js",
+    "bin": {
+        "pegjs": "cli.js",
+        "pegjs-dev": "cli.js"
+    },
+    "repository": "pegjs/pegjs",
+    "dependencies": {
+        "pegjs": "dev"
+    },
+    "engines": {
+        "node": ">=4"
+    }
+}
