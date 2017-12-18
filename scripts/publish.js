@@ -3,7 +3,7 @@
 const { exec } = require( "child_process" );
 const { join } = require( "path" );
 
-const cwd = join( __dirname, "..", "pegjs" );
+const cwd = join( __dirname, "..", "packages", "pegjs" );
 const pegjs = require( join( cwd, "package.json" ) );
 
 function run( command, callback ) {

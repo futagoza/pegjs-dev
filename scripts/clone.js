@@ -5,7 +5,7 @@ const { join } = require( "path" );
 
 spawn( "git", [ "clone", "https://github.com/pegjs/pegjs.git" ], {
 
-    cwd: join( __dirname, ".." ),
+    cwd: join( __dirname, "..", "packages" ),
     env: process.env,
     stdio: "inherit"
 

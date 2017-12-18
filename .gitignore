@@ -1,4 +1,4 @@
-/pegjs
+/packages/pegjs
 node_modules
 /.eslintcache
 /npm-debug.log

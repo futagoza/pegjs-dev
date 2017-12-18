@@ -3,7 +3,7 @@
 const { exec } = require( "child_process" );
 const { join } = require( "path" );
 
-const cwd = join( __dirname, "..", "pegjs" );
+const cwd = join( __dirname, "..", "packages", "pegjs" );
 
 exec( "git rev-list v0.10.0..master", { cwd }, function printResult( err, stdout ) {
 
