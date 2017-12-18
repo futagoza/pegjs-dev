@@ -1,7 +1,0 @@
-{
-    "name": "pegjs-dev",
-    "bin": {
-        "pegjs": "bin/peg.js",
-        "pegjs-dev": "bin/peg.js"
-    }
-}
