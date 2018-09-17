@@ -6,7 +6,7 @@ const { join } = require( "path" );
 const { EOL } = require( "os" );
 
 const cwd = join( __dirname, ".." );
-const pegPackage = join( cwd, "packages", "pegjs", "package.json" );
+const pegPackage = join( cwd, "packages", "pegjs", "packages", "pegjs", "package.json" );
 
 exec( "node scripts/count", { cwd }, function printResult( err, stdout ) {
 
