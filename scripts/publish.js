@@ -27,6 +27,6 @@ run( "npm view pegjs@dev version", function publish( stdout ) {
 
     if ( pegjs.version === stdout.trim() ) return false;
 
-    run( "npm publish --tag=dev", process.stdout.write.bind( process.stdout ) );
+    run( "npm publish --tag=dev", console.log.bind( console ) );
 
 } );

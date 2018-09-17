@@ -19,7 +19,7 @@ exec( "git rev-list v0.10.0..master", { cwd }, function printResult( err, stdout
     if ( commits !== "" ) {
 
         // -1, as the above git command returns 1 extra result
-        process.stdout.write( `${ --commits.split( "\n" ).length }` );
+        console.log( `${ --commits.split( "\n" ).length }` );
 
     }
 
