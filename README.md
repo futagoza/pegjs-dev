@@ -1,7 +1,6 @@
 [![ci](https://img.shields.io/travis/pegjs/pegjs.svg)](https://travis-ci.org/pegjs/pegjs)
 [![release](https://img.shields.io/npm/v/pegjs.svg)](https://www.npmjs.com/package/pegjs)
 [![dev](https://img.shields.io/npm/v/pegjs/dev.svg)](https://github.com/pegjs/pegjs)
-[![bower](https://img.shields.io/bower/v/pegjs.svg)](https://github.com/pegjs/bower)
 [![license](https://img.shields.io/badge/license-mit-blue.svg)](https://opensource.org/licenses/MIT)
 
 PEG.js is a simple parser generator for JavaScript that produces fast parsers with excellent error reporting. You can use it to process complex data or computer languages and build transformers, interpreters, compilers and other tools easily.
