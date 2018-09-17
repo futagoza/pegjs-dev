@@ -1,8 +1,8 @@
 {
     "private": true,
     "dependencies": {
-        "eslint": "4.13.x",
-        "eslint-config-futagozaryuu": "3.7.x",
+        "eslint": "5",
+        "eslint-config-futagozaryuu": "5",
         "rimraf": "2.6.x"
     },
     "engines": {
